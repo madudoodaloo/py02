@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-from __future__ import annotations
-
 class GardenError(Exception):
     """Base exception for all garden-related errors"""
 
