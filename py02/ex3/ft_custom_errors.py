@@ -41,7 +41,6 @@ def ft_custom_errors() -> None:
 
     # 3. Testing catching all garden errors via parent class GardenError
     print("Testing catching all garden errors...")
-    
     try:
         raise PlantError("The tomato plant is wilting!")
     except GardenError as err:
