@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def garden_operations(op_id: int):
+def garden_operations(op_id: int) -> None:
 	
 	if op_id == 0:
 		int("abc")

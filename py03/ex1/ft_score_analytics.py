@@ -3,6 +3,19 @@
 
 import sys
 
+def display_scores(scores: list[int]) -> None:
+    scores.sort()
+
+    print(f"Scores processed: {scores}")
+    print(f"Total players: {len(scores)}")
+    print(f"Total score: {sum(scores)}")
+    print(f"Average score: {sum(scores) / len(scores):.1f}")
+    print(f"High score: {max(scores)}")
+    print(f"Low score: {min(scores)}")
+    print(f"Score range: {max(scores) - min(scores)}")
+
+    
+
 def ft_score_analytics() -> None:
     """Parses score arguments, performs statistical calculations, and prints results."""
     print(("=== Player Score Analytics ==="))
@@ -21,16 +34,7 @@ def ft_score_analytics() -> None:
         print("No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
         return
 
-    scores.sort()
-
-    print(f"Scores processed: {scores}")
-    print(f"Total players: {len(scores)}")
-    print(f"Total score: {sum(scores)}")
-    print(f"Average score: {sum(scores) / len(scores):.1f}")
-    print(f"High score: {max(scores)}")
-    print(f"Low score: {min(scores)}")
-    print(f"Score range: {max(scores) - min(scores)}")
-
+    display_scores(scores)
 
 if __name__ == "__main__":
     ft_score_analytics()

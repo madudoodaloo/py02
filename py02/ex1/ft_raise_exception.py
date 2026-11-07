@@ -1,18 +1,6 @@
 #!/usr/bin/env python3
 
 def input_temperature(temp_str: str) -> int:
-	"""Converts a temperature string to an integer and checks plant safety bounds.
-
-	Args:
-        temp_str: The temperature string input to convert.
-
-    Returns:
-        The temperature as an integer if within [0, 40] °C.
-
-    Raises:
-        ValueError: If temp_str is not a valid integer or falls outside
-                    the safe range for plants (0°C to 40°C).
-    """
 	temp = int(temp_str)
 	if temp < 0:
 		raise ValueError(f"{temp}°C is too cold for plants (min 0°C)")
@@ -22,7 +10,6 @@ def input_temperature(temp_str: str) -> int:
 
 
 def test_temperature() -> None:
-	"""Tests input_temperature with valid, invalid, and extreme values."""
 	print("=== Testing Garden Temperature ===")
 	print("\n")
 
@@ -38,6 +25,6 @@ def test_temperature() -> None:
 	
 	print("\n")
 	print("All tests, all errors successfully handled!")
-	
+
 if __name__ == "__main__":
 	test_temperature()
