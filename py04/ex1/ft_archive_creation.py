@@ -46,9 +46,9 @@ def ft_ancient_creation()-> None:
 
         print(f"Saving data to '{newfile}'")
         save: IO[str] = open(newfile, 'w+')
-        i: int = 0
+        new: list[str] = (line + "#\n" for line in content.splitlines())
         for line in new:
-            save.write(str(line))
+            save.write(line)
         print(f"Data saved in '{newfile}'")
             
     except (EOFError, KeyboardInterrupt) as e:
