@@ -22,7 +22,7 @@ def ft_stream_management()-> None:
         file.close()
 
     except (OSError, UnicodeError, Exception) as e:
-        print(f"{e.__class__.__name__}: {e}", file=sys.stderr)
+        print(f"[STDERR] {e.__class__.__name__}: {e}", file=sys.stderr)
         print("Terminating program")
         return
 
@@ -35,7 +35,7 @@ def ft_stream_management()-> None:
         print("______\n")
         
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"[STDERR] Error: {e}")
     
     try:
         newfile: str = input("Enter new file name (or empty): ")
@@ -54,9 +54,9 @@ def ft_stream_management()-> None:
     except (EOFError, KeyboardInterrupt) as e:
         print("\nData not saved")
     except MemoryError as e:
-        print("Failed to allocate memory: The data is too large for the available RAM.")
+        print("[STDERR] Failed to allocate memory: The data is too large for the available RAM.")
     except (OSError, UnicodeError, Exception) as e:
-        print(f"{e.__class__.__name__}: {e}")
+        print(f"[STDERR] {e.__class__.__name__}: {e}")
 
 
 if __name__ == "__main__":
