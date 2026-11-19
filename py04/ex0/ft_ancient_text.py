@@ -12,11 +12,20 @@ def ft_ancient_text()-> None:
     print("=== Cyber Archives Recovery ===")
         
     try:
-        file: IO[str] = open(sys.argv[1:], 'r')
-    except (OSError) as e:
-        
+        file: IO[str] = open(sys.argv[1], 'r')
+        print(f"Accessing file '{sys.argv[1]}'")
+        print()
+        print("________________")
+        print()
+        print(file.read())
+        print("________________")
+        print()
+        file.close()
+        print(f"Closing '{sys.argv[1]}'")
+    except (OSError, Exception) as e:
+        print(f"{e.__class__.__name__}: {e}")
 
-        
+
 if __name__ == "__main__":
     ft_ancient_text()
 
@@ -28,3 +37,4 @@ if __name__ == "__main__":
 # https://www.geeksforgeeks.org/python/file-objects-python/
 # https://www.geeksforgeeks.org/python/python-open-function/
 # https://stackoverflow.com/questions/47452824/catch-unicodedecodeerror-exception-while-reading-file-line-by-line-in-python-3
+# https://stackoverflow.com/questions/24983762/git-ignore-local-file-changes
