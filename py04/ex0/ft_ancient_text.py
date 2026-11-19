@@ -12,24 +12,28 @@ def ft_ancient_text()-> None:
     print("=== Cyber Archives Recovery ===")
         
     try:
+        print(f"Attempt to open() [read only]: '{sys.argv[1]}'\n")
         file: IO[str] = open(sys.argv[1], 'r')
-        print(f"Accessing file '{sys.argv[1]}'")
-        print()
-        print("________________")
-        print()
-        print(file.read())
-        print("________________")
-        print()
+        
+        print("______\n", file.read(), end="")
+        print("______\n")
+        print(f"Attempt to close() '{sys.argv[1]}'")
         file.close()
-        print(f"Closing '{sys.argv[1]}'")
-    except (OSError, Exception) as e:
+
+    except (OSError) as e:
         print(f"{e.__class__.__name__}: {e}")
+    except (UnicodeError) as e:
+        print(f"{e.__class__.__name__}: {e}")
+    except (Exception) as e:
+        print(f"{e.__class__.__name__}: {e}")
+
+    
 
 
 if __name__ == "__main__":
     ft_ancient_text()
 
-
+#  encoding='ascii'
 # https://realpython.com/ref/builtin-functions/open/
 # https://docs.python.org/3/builtins/exceptions.html#ChildProcessError
 # https://realpython.com/ref/builtin-exceptions/oserror/
