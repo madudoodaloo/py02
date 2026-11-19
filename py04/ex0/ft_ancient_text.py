@@ -13,7 +13,7 @@ def ft_ancient_text()-> None:
         
     try:
         print(f"Attempt to open() [read only]: '{sys.argv[1]}'\n")
-        file: IO[str] = open(sys.argv[1], 'r')
+        file: IO[str] = open(sys.argv[1], 'r', encoding='ascii')
         
         print("______\n", file.read(), end="")
         print("______\n")
